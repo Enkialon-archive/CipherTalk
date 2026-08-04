@@ -104,7 +104,7 @@ jobs:
         run: npm ci --ignore-scripts
 
       - name: Rebuild native modules
-        run: npx electron-rebuild
+        run: npx electron-rebuild --build-from-source
 
       - name: Install ffmpeg-static binary
         run: node node_modules/ffmpeg-static/install.js
@@ -172,7 +172,7 @@ jobs:
         run: npm ci --ignore-scripts
 
       - name: Rebuild native modules
-        run: npx electron-rebuild
+        run: npx electron-rebuild --build-from-source
 
       - name: Install ffmpeg-static binary
         run: node node_modules/ffmpeg-static/install.js

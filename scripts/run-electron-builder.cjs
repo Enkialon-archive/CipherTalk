@@ -3,10 +3,10 @@ const path = require('path')
 const fs = require('fs')
 const pkg = require('../package.json')
 
-const target = process.argv[2]
+const target = process.argv[2] || (process.platform === 'win32' ? 'win' : process.platform === 'darwin' ? 'mac' : '')
 
 if (!target || !['win', 'mac'].includes(target)) {
-  console.error('Usage: node scripts/run-electron-builder.cjs <win|mac>')
+  console.error('Usage: node scripts/run-electron-builder.cjs [win|mac]')
   process.exit(1)
 }
 
